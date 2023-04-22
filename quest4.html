@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Gupy</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="questao">
+        <div class="links">
+            <a href="./quest5.html"><h1>Questão 5</h1></a>
+            <a href="./quest4.html"><h1>Questão 4</h1></a>
+            <a href="./quest3.html"><h1>Questão 3</h1></a>
+         </div>
+        <div class="container contq4">
+        <div class="cartao">
+            <p>Dois veículos (um carro e um caminhão) saem respectivamente de cidades opostas pela mesma rodovia. O carro de Ribeirão Preto em direção a Franca, a uma velocidade constante de 110 km/h e o caminhão de Franca em direção a Ribeirão Preto a uma velocidade constante de 80 km/h. Quando eles se cruzarem na rodovia, qual estará mais próximo a cidade de Ribeirão Preto?</p>
+    
+            <p>IMPORTANTE:</p>
+            
+            <p>a) Considerar a distância de 100km entre a cidade de Ribeirão Preto <-> Franca.</p>    
+            <p>b) Considerar 2 pedágios como obstáculo e que o caminhão leva 5 minutos a mais para passar em cada um deles e o carro possui tag de pedágio (Sem Parar)</p>
+            <p>c) Explique como chegou no resultado.</p>
+
+            <p>Resultado:</p>
+            
+            <p>O exercício proposto se trata de um MRU (Movimento Uniformemente Variado) onde não há aceleração e velocidade constante.</p> Identificando do que se trata é possível começar o problema. 
+               <p> 1 Passo. No anunciado diz que dois carros saem de cidades opostas pela mesma rodovia, então é preciso determinar o ponto de referência que neste caso será o carro que partira de Ribeirão Preto. Sendo usaremos a função horaria da posição: 
+                <math>
+                    <msub>
+                        <mn>x</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>=</mo>
+                    <msub>
+                        <mn>s</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                        <mn>v</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>.</mo>
+                    <mi>t</mi>
+                </math>
+            </p>
+
+            <p>2 Passo. Agora vamos a função horaria da posição do caminhão. Como ele está partindo em sentido contrário do ponto de referência então sua função será:   
+                <math>
+                <msub>
+                    <mn>x</mn>
+                    <mn>2</mn>
+                </msub>
+                <mo>=</mo>
+                <mn>-100km</mn>
+                <mo>+</mo>
+                <msub>
+                    <mn>v</mn>
+                    <mn>2</mn>
+                </msub>
+                <mo>.</mo>
+                <mi>t</mi>
+            </math> 
+            </p>
+
+            <p>3 Passo. Como o caminhão precisa parar em 2 pedágios e leva certa de 5 minutos em cada é possível dizer que 10 minutos corresponde a 0,17h e assim é necessário calcular o tempo do caminhão. 
+                <math>
+                    <msub>
+                        <mn>t</mn>
+                        <mn>2</mn>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                              <mn> 100km</mn>
+                        </mrow>
+                        <mn>80km/h</mn>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mn>1,25</mn>
+                  <mo>+</mo>
+                  <mn>0,17</mn>
+                  <mo>=</mo>
+                  <mn>1,42</mn>
+                </math>
+            </p>
+
+            <p>4 Passo. Sabendo do novo tempo do caminhão podemos calcular a sua velocidade media que será:
+                <math>
+                    <msub>
+                        <mn>v</mn>
+                        <mn>m</mn>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                              <mn> 100km</mn>
+                        </mrow>
+                        <mn>1,42</mn>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mn>70,6km/h</mn>
+                </math>
+            </p>
+
+            <p>
+                5 Passo. Agora podemos igualar o tempo do carro com o caminhão para saber em qual ponto da rodovia ambos irão se encontrar.
+                <math>
+                    <msub>
+                        <mn>t</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>=</mo>
+                    <msub>
+                        <mn>t</mn>
+                        <mn>2</mn>
+                    </msub>
+                </math> ->
+                <math>
+                    <mfrac>
+                        <mrow>
+                            <mn>x</mn>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mn>x</mn>
+                            <mn>0</mn>
+                        </mrow>
+                        <msub>
+                            <mn>v</mn>
+                            <mn>1</mn>
+                         </msub>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                        <mrow>
+                            <mn>x</mn>
+                            <mn>1</mn>
+                            <mo>-</mo>
+                            <mn>x</mn>
+                            <mn>0</mn>
+                        </mrow>
+                    </mrow>
+                    <msub>
+                        <mn>-v</mn>
+                        <mn>2</mn>
+                     </msub>
+              </mfrac>
+                </math> ->
+                <math>
+                    <msub>
+                        <mn>-v</mn>
+                        <mn>2</mn>
+                    </msub>
+                    <msub>
+                        <mn>x</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>=</mo>
+                    <msub>
+                        <mn>v</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>.</mo>
+                    <msub>
+                        <mn>x</mn>
+                        <mn>2</mn>
+                    </msub>
+                    <mo>-</mo>
+                    <msub>
+                        <mn>v</mn>
+                        <mn>1</mn>
+                    </msub>
+                    <msub>
+                        <mn>x</mn>
+                        <mn>2</mn>
+                    </msub>
+                </math>
+
+                Simplificando:
+                <math>
+                    <mn>x</mn>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <mn>v</mn>
+                            <mn>1</mn>
+                            <mo>.</mo>
+                            <mn>x</mn>
+                            <mn>2</mn>
+                        </mrow>
+                        <msub>
+                            <mn>v</mn>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mn>v</mn>
+                            <mn>2</mn>
+                         </msub>
+                  </mfrac>
+                </math> ->
+                <math>
+                    <mn>x</mn>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <mn>110 km/h</mn>
+                            <mo>.</mo>
+                            <mn>100 km</mn>
+                        </mrow>
+                        <msub>
+                            <mn>110 km/h</mn>
+                            <mo>+</mo>
+                            <mn>70,6 km/h</mn>
+                         </msub>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mn id="resp"></mn>
+                </math>
+            </p>
+
+            <p>Eles se cruzarão no km 60,9 de Ribeirão Preto até Franca.</p>
+    </div>
+    </div>
+    </div>
+
+    
+    <script src="./scripts/quarta_q.js"></script>
+</body>
+</html>
